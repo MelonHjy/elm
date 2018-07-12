@@ -1,0 +1,122 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{restaurant.title}}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="{% static 'base/css/bootstrap.min.css'%}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'base/css/swiper-3.4.2.min.css'%}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'food.css'%}"/>
+
+    <script type="text/javascript" charset="utf-8" src="{% static 'base/js/jquery-3.1.1.min.js'%}"></script>
+    <script type="text/javascript" charset="utf-8" src="{% static 'base/js/bootstrap.min.js'%}"></script>
+    <script type="text/javascript" charset="utf-8" src="{% static 'base/js/swiper-3.4.2.min.js'%}"></script>
+    <script type="text/javascript" charset="utf-8" src="{% static 'food.js'%}"></script>
+</head>
+<body>
+    <div>
+    <header>
+        <a href="{% url 'elm:home' %}">
+            <svg>
+                <path fill="#fff" d="M16.552 5.633L14.508 3.59 2.243 15.853 14.508 28.41l2.044-2.043-10.22-10.513z"></path>
+            </svg>
+        </a>
+    </header>
+        <div id="nav">
+            <img src="{{restaurant.img}}"/>
+            <h3>{{restaurant.name}}</h3>
+            <span>{{restaurant.star}}星，月售{{restaurant.month_sell}}单</span>
+        </div>
+        <div id="tab">
+            <div><span id="menu">点餐</span></div>
+            <div><span id="evaluate">评价</span></div>
+            <div><span id="shop">商家</span></div>
+        </div>
+    </div>
+
+    <div>
+        <!--点餐页-->
+        <div class="menu">
+            <!--左边-->
+            <ul>
+            {% for type in typeList %}
+                <li><span>{{type}}</span></li>
+            {% endfor %}
+            </ul>
+            <!--右边-->
+            <section>
+                <dl>
+                    {% for foodList in L %}
+                        {% for food in foodList %}
+                            {% if forloop.first %}
+                                <dt>{{food.type}}</dt>
+                            {% endif %}
+                            <dd>
+                                <div>
+                                    <span>
+                                        <img src="{{food.img}}"/>
+                                    </span>
+                                    <section>
+                                        <span>{{food.name}}</span>
+                                        <span>{{food.money}}</span>
+                                        {%csrf_token%}
+                                        <span id="{{food.id}}remove" ga="{{food.id}}" class="glyphicon glyphicon-minus-sign cart-remove"></span>
+                                        <span class='buy-number' id="{{food.id}}">0</span>
+                                        <span id="{{food.id}}add" ga="{{food.id}}" class="glyphicon glyphicon-plus-sign cart-add"></span>
+                                    </section>
+                                </div>
+                            </dd>
+                        {% endfor %}
+                    {% endfor %}
+                </dl>
+            </section>
+            <footer>
+                <span class="glyphicon glyphicon-shopping-cart cart"></span>
+                <span id="money">0</span>
+                <p>配送费¥{{restaurant.send_money}}</p>
+                <span id="send">¥{{restaurant.start_send}}起送</span>
+                <a href="/checkout/"><span id="check">去结算</span></a>
+            </footer>
+        </div>
+        <!--评价页-->
+        <div class="evaluate">
+            <section>
+                <strong>4.8</strong>
+            </section>
+            <!--<ul>-->
+                <!--{% for eva in evaList %}-->
+                <!--<li></li>-->
+                <!--{% endfor %}-->
+            <!--</ul>-->
+        </div>
+        <!--商家页-->
+        <div class="shop">
+            <section>
+                <h3>配送信息</h3>
+                <span>由蜂鸟快送提供配送，约44分钟送达，距离2.8km</span>
+                <span>配送费￥3.38</span>
+            </section>
+            <section>
+                <h3>活动与服务</h3>
+                <div></div>
+            </section>
+            <section>
+                <h3>商家实景</h3>
+                <img src=""/>
+                <img src=""/>
+            </section>
+            <section>
+                <h3>商家信息</h3>
+                <ul>
+                    <li><span>品类</span><span>炸鸡炸串, 汉堡</span></li>
+                    <li><span>商家电话</span><span>4008597597</span></li>
+                    <li><span>地址</span><span>佛山市顺德区大良街道府又居委会东乐路268号新一城购物广场01层01-01/02a室</span></li>
+                    <li><span>营业时间</span><span>00:00-04:45,05:00-10:15,10:30-23:55</span></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+</body>
+</html>

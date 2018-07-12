@@ -1,0 +1,84 @@
+{% extends 'elm/base.html' %}
+{% load static from staticfiles %}
+{% block linkscript %}
+        <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css'%}"/>
+        <script type="text/javascript" charset="utf-8" src="{% static 'home/js/home.js'%}"></script>
+{% endblock linkscript %}
+{% block header %}
+        <a  href="#">
+            <span>
+                <svg>
+                    <path fill="#FFF" fill-rule="evenodd" d="M22.116 22.601c-2.329 2.804-7.669 7.827-7.669 7.827-.799.762-2.094.763-2.897-.008 0 0-5.26-4.97-7.643-7.796C1.524 19.8 0 16.89 0 13.194 0 5.908 5.82 0 13 0s13 5.907 13 13.195c0 3.682-1.554 6.602-3.884 9.406zM18 13a5 5 0 1 0-10 0 5 5 0 0 0 10 0z"></path>
+                </svg>
+            </span>
+        </a>
+{% endblock header %}
+
+{% block base %}
+<div id="home">
+    <div class="search">
+        <a href="#">
+            <svg><path fill-opacity=".38" d="M14.778 13.732a.739.739 0 1 1-1.056 1.036l-2.515-2.565a.864.864 0 0 1-.01-1.206 4.894 4.894 0 0 0 1.357-3.651c-.126-2.492-2.156-4.52-4.648-4.647a4.911 4.911 0 0 0-5.16 5.163c.126 2.475 2.13 4.496 4.605 4.642.451.026.896-.008 1.326-.1a.739.739 0 0 1 .308 1.446c-.56.12-1.137.164-1.72.13-3.227-.19-5.83-2.815-5.995-6.042a6.39 6.39 0 0 1 6.71-6.715c3.25.165 5.884 2.8 6.05 6.048a6.37 6.37 0 0 1-1.374 4.3l2.12 2.161z"></path></svg>
+            <span>搜索饿了么商家、商品名称</span>
+        </a>
+    </div>
+    <!--轮播-->
+    <section class="swiper-container" id="topSwiper">
+        <div class="swiper-wrapper">
+            {% for wheel in wheelsList %}
+            <div class="swiper-slide">
+                <a href="#">
+                    <img src="{{wheel.img}}"/>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>
+    </section>
+
+    <section class="topMenu">
+        <!--导航-->
+        <div>
+            {% for nav in navList %}
+            <a href="#">
+                <img src="{{nav.img}}"/>
+                <span>{{nav.name}}</span>
+            </a>
+            {% endfor %}
+            <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>
+        </div>
+    </section>
+
+    <section class="set_meal">
+        <div>
+            <h3>品质套餐</h3>
+            <span>搭配齐全吃得好</span>
+            <h5>立即抢购 ></h5>
+            <img src="//fuss10.elemecdn.com/d/d4/16ff085900d62b8d60fa7e9c6b65dpng.png?imageMogr/format/webp/thumbnail/!240x160r/gravity/Center/crop/240x160/"/>
+        </div>
+        <div>
+            <h3>限量抢购</h3>
+            <span>超值美味9.9元起</span>
+            <h5>58人正在抢 ></h5>
+            <img src="//fuss10.elemecdn.com/b/e1/0fa0ed514c093a7138b0b9a50d61fpng.png?imageMogr/format/webp/thumbnail/!240x160r/gravity/Center/crop/240x160/"/>
+        </div>
+    </section>
+
+    <div id="recommend">——推荐商家——</div>
+
+    <section class="restaurant">
+        {% for rest in restList %}
+        <section>
+            <a href="{% url 'elm:food' rest.url_id %}">
+                <img src="{{rest.img}}"/>
+                <div>
+                    <h3>{{rest.name}}</h3>
+                    <span>{{rest.star}}星,月售{{rest.month_sell}}单</span>
+                    <span>¥{{rest.start_send}}起送,配送费¥{{rest.send_money}}</span>
+                </div>
+            </a>
+        </section>
+        {% endfor %}
+    </section>
+</div>
+{% endblock base %}

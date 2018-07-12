@@ -1,0 +1,40 @@
+div{
+	text-align: center;
+}
+#logo{
+	width: 37%;
+	margin:0 auto;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+	display: block;
+}
+div span{
+	color: #2395ff;
+	font-weight: 700;
+    border-bottom: 2px solid #2395ff;
+    font-size: 14px;
+    padding-bottom: 4px;
+    width: 58px;
+}
+form input{
+	width: 80%;
+    height: 4rem;
+    padding-left: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #333;
+    margin-top: 1rem;
+}
+form button{
+    width: 80%;
+    height: 4rem;
+    margin-top: 2.5rem;
+    border-radius: 4px;
+    background: #4cd96f;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    line-height: 42px;
+    border: none;
+}

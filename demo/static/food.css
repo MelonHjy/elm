@@ -1,0 +1,236 @@
+html, body{
+	width: 100%;
+	height: 100%;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background: white;
+}
+img{
+	width: 8rem;
+	height: 8rem;
+}
+
+header{
+	width: 100%;
+	height: 4.5rem;
+	font-size: 0.277777rem;
+	border-top: 1px solid #f0f0f0;
+	z-index: 10;
+	display: flex;
+	background-color: rgba(119,103,137,.43);
+	top: 0;
+	left: 0;
+}
+header a{
+	height: 54px;
+	width: 54px;
+}
+header a svg{	
+	height: 35px;
+	width: 35px;
+	margin-left: 0.6rem;
+	margin-top: 0.3rem;
+}
+
+#nav{
+	height: auto;
+	position: relative;
+}
+#nav img{
+	width: 6rem;
+	height: 6rem;
+	position: absolute;
+	left: 40%;
+	top: -60%;
+}
+#nav h3{
+	padding-top: 2.5rem;
+	text-align: center;
+	font-weight: bold;
+	font-size: 2.1rem;
+}
+#nav span{
+	text-align: center;
+	display: block;
+	font-size: .293333rem;
+}
+
+#tab{
+	display: flex;
+	border-bottom: 1.5px solid #e8e8e8;
+}
+#tab div{
+	width: 12rem;
+}
+#tab div span{
+	text-align: center;
+	display: block;
+	font-size: 1.5rem;
+}
+#menu{
+	font-weight: bold;
+}
+
+.menu{
+	display: flex;
+	padding-bottom: 4.5rem;
+}
+.menu section{
+	width: 75%;
+}
+.menu ul{
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	width: 25%;
+	padding: 0;
+	background-color: #f8f8f8;
+}
+.menu li{
+	padding: 4.666667vw 2vw;
+    border-bottom: 1px solid #e8e8e8;
+    font-size: .32rem;
+    color: #666;
+    width: 100%;
+    text-align: center;
+}
+.menu dt{
+	    border-bottom: 1px solid #e8e8e8;
+	    padding: 0.5rem;
+	    font-size: 1.2rem;
+    	font-weight: 700;
+}
+.menu dd{
+	position: relative;
+    margin: 0;
+}
+.menu dd div{
+	padding: 2.666667vw 2.666667vw 2.666667vw 0;
+    margin-bottom: 1px;
+    display: flex;
+    min-height: 27.466667vw;
+    position: relative;
+
+}
+.menu dd div section{
+    position: relative;
+    padding-bottom: 6.666667vw;
+}
+.menu dd div section span{
+    font-weight: 700;
+}
+.menu dd div section span:first-child{
+	font-size: 1.5rem;
+    line-height: 1.2;
+    overflow: hidden;
+    word-break: break-word;
+}
+.menu dd div section span:nth-child(2){
+	position: absolute;
+	margin-right: 7rem;
+	left: 0.5rem;
+	bottom: 0;
+	font-size: 1.5rem;
+}
+.cart-remove{    
+	color: #2395ff;
+    font-size: 1.8rem;
+    position: absolute;
+    right: 4rem;
+    top: 6.3rem;
+    display: none;
+}
+.buy-number{
+    position: absolute;
+    right: 2.5rem;
+    top: 6.3rem;
+    display: none;
+}
+.cart-add{
+	position: absolute;
+    right: 0.1rem;
+    top: 6.3rem;
+    color: #2395ff;
+    font-size: 1.8rem;
+}
+.menu footer{
+	width: 100%;
+	height: 4.5rem;
+	border-top: 1px solid #f0f0f0;
+	z-index: 10;
+	position: fixed;
+	display: flex;
+	background: rgb(61,61,63);
+	bottom: 0;
+	left: 0;
+}
+.cart{
+	color: white;
+	font-size: 2.4rem;
+	position: absolute;
+	left:2rem;
+	top: 0.3rem;
+}
+#money{
+	color: white;
+	font-size: 1.9rem;
+	position: absolute;
+	left:5.5rem;
+	top: 0.5rem;
+}
+.menu footer p{
+	color: white;
+	font-size: 0.1rem;
+	position: absolute;
+	left:5.5rem;
+	top: 2.5rem;
+}
+#send{
+	color: white;
+	font-size: 1.5rem;
+	text-align: center;
+	position: absolute;
+	right:2.5rem;
+	top: 1.3rem;
+}
+.evaluate{
+	display: none;
+	padding-bottom: 4.5rem;
+}
+.shop{
+	display: none;
+	padding-bottom: 4.5rem;
+}
+#check{
+	display: none;
+	color: white;
+	font-size: 1.5rem;
+	text-align: center;
+	position: absolute;
+	right:2.5rem;
+	top: 1.3rem;
+}
+a{
+	text-decoration: none;	
+}
+
+a:link{
+	text-decoration: none;
+}
+
+a:visited{
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+a:active{
+	text-decoration: none;
+}

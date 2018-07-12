@@ -1,0 +1,56 @@
+#cart{
+	padding: 1.5rem 0;
+	font-family: "微软雅黑";
+	overflow: auto;
+	height: 100%;
+	width: 100%;
+	padding-bottom: 3rem;
+	position: fixed;
+	background-color: #f5f5f5;
+}
+.cart dl dt svg path{
+	fill: deepskyblue;
+}
+.cart dl dd{
+	color: deepskyblue;
+}
+img{
+	margin: 0 auto;
+    display: table-cell;
+    height: 5rem;
+    margin-top: 4rem;
+}
+h3{
+	font-size: 17px;
+	text-align: center;
+}
+button{
+	margin: 0 auto;
+    display: block;
+    padding: .266667rem;
+    min-width: 3.2rem;
+    border: none;
+    border-radius: .053333rem;
+    background-color: #56d176;
+    color: #fff;
+    text-align: center;
+    font-family: inherit;
+}
+.btn{
+    margin-right: 0.5rem;
+    display: block;
+    padding: .266667rem;
+    border-radius: .053333rem;
+    background-color: lightgray;
+    color: black;
+    text-align: center;
+    font-family: inherit;
+}
+section div{
+	    border-bottom: 2px solid deepskyblue;
+}
+header a svg{
+	height: 30px;
+	margin-left: 0.6rem;
+	margin-top: 0.3rem;
+}

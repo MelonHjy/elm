@@ -1,0 +1,33 @@
+html, body{
+	width: 100%;
+	height: 100%;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background: white;
+}
+header{
+	width: 100%;
+	height: 4.5rem;
+	font-size: 0.277777rem;
+	border-top: 1px solid #f0f0f0;
+	z-index: 10;
+	display: flex;
+	background-color: deepskyblue;
+	top: 0;
+	left: 0;
+}
+header a{
+	height: 54px;
+	width: 54px;
+}
+header a svg{	
+	height: 35px;
+	width: 35px;
+	margin-left: 0.6rem;
+	margin-top: 0.3rem;
+}
